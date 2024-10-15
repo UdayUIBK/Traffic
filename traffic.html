@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Transport App</title>
+    <link rel="stylesheet" href="traffic.css">
+</head>
+<body>
+    <div id="login-container" class="auth-container">
+        <h2>Login to Smart Transport</h2>
+        <form id="login-form">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div id="login-error-message" class="error-message"></div>
+        <div class="switch-auth">
+            Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a>
+        </div>
+    </div>
+
+    <div id="signup-container" class="auth-container" style="display: none;">
+        <h2>Join Smart Transport</h2>
+        <form id="signup-form">
+            <input type="text" id="signup-username" placeholder="Choose a username" required>
+            <input type="password" id="signup-password" placeholder="Create a password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div id="signup-error-message" class="error-message"></div>
+        <div class="switch-auth">
+            Already have an account? <a href="#" onclick="showLogin()">Login</a>
+        </div>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <nav class="navbar">
+            <h1>Smart Transport App</h1>
+            <button onclick="logout()">Logout</button>
+        </nav>
+        <div class="container">
+            <div class="left-panel">
+                <div class="card">
+                    <h2>Find Your Route</h2>
+                    <input type="text" id="start" placeholder="Enter start location">
+                    <input type="text" id="destination" placeholder="Enter destination">
+                    <button onclick="getRoute()">Get Route</button>
+                    <div id="loading" style="display: none;">Loading...</div>
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="card">
+                    <h2>Public Transport Arrivals</h2>
+                    <ul id="arrival-list"></ul>
+                </div>
+                <div class="card">
+                    <h2>Health Tips for Public Transport</h2>
+                    <ul class="tips">
+                        <li>Wear a mask in crowded places.</li>
+                        <li>Keep a safe distance from others.</li>
+                        <li>Use hand sanitizer regularly.</li>
+                        <li>Avoid touching your face.</li>
+                        <li>Choose less crowded times for travel if possible.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>Saved Routes</h2>
+                    <button onclick="saveFavorite()">Save Current Route</button>
+                    <ul id="favorites-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="traffic.js"></script>
+</body>
+</html>
