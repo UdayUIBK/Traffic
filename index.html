@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Transport App</title>
+    <title>Travelsync</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="login-container" class="auth-container">
-        <h2>Login to Smart Transport</h2>
+        <h2>Login to Travelsync</h2>
         <form id="login-form">
             <input type="text" id="login-username" placeholder="Username" required>
             <input type="password" id="login-password" placeholder="Password" required>
@@ -21,7 +21,7 @@
     </div>
 
     <div id="signup-container" class="auth-container" style="display: none;">
-        <h2>Join Smart Transport</h2>
+        <h2>Join Travelsync</h2>
         <form id="signup-form">
             <input type="text" id="signup-username" placeholder="Choose a username" required>
             <input type="password" id="signup-password" placeholder="Create a password" required>
@@ -35,7 +35,10 @@
 
     <div id="app-container" style="display: none;">
         <nav class="navbar">
-            <h1>Smart Transport App</h1>
+            <div class="logo-container">
+                <img src="/public/logo2.png" alt="Travelsync Logo" class="logo">
+                <h1>Travelsync</h1>
+            </div>
             <button onclick="logout()">Logout</button>
         </nav>
         <div class="container">
